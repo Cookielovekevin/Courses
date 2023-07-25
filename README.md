@@ -12,8 +12,8 @@ course object with instance variables:
 --- Courses File ---
 GUI with next, previous, clear, add, and update buttons to interact with course objects. 
 
-next - view next course
-previous - view previous course
-clear - clear current view (does not change course object) 
-update - updates current course object to values on GUI. 
-add - adds a new course object with the values on GUI.
+- next - view next course
+- previous - view previous course
+- clear - clear current view (does not change course object) 
+- update - updates current course object to values on GUI. 
+- add - adds a new course object with the values on GUI.
