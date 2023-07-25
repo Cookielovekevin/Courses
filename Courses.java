@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 
 public class Courses extends JFrame implements ActionListener{
 private ArrayList<Course> Courses;
@@ -12,6 +14,7 @@ private JTextField credits_tf;
 private JLabel slider_grade_l; 
 private JSlider slider_grade; 
 private JLabel box_grade_l; 
+private JLabel slider_grade_num;
 private JComboBox<Integer []> box_grade; 
 private JLabel ap_l; 
 private JCheckBox ap_check; 
@@ -22,6 +25,7 @@ private JButton b_update;
 private JButton b_clear; 
 private JLabel page_l; 
 private JLabel page_number_l;
+
 private int index = -1;
 
 // set the page to all the values 
@@ -47,8 +51,8 @@ public void setPage(int index){
   }
 
  
-
-public Courses(ArrayList<Course> Courses) { //GUI 
+// ---------------- GUI ----------------------------- // 
+public Courses(ArrayList<Course> Courses) { 
 super("Courses GUI");
 this.Courses = Courses;
 this.setSize(300,350);
@@ -61,7 +65,15 @@ name_tf = new JTextField();
 credits_l = new JLabel("Credits: ");
 credits_tf = new JTextField();
 slider_grade_l = new JLabel("Grade: ");
-slider_grade = new JSlider();
+slider_grade_num = new JLabel("");
+
+//slider 
+slider_grade = new JSlider(JSlider.HORIZONTAL, 0, 100, 50);
+slider_grade.addChangeListener(new ChangeListener() {
+  public void stateChanged(ChangeEvent e){
+    slider_grade_num.setText(String.valueOf(slider_grade.getValue()));
+  }
+}); 
 
 box_grade_l = new JLabel("Grade lvl: ");
 Integer [] grade_levels = {9,10,11,12};
@@ -91,6 +103,7 @@ this.getContentPane().add(name_l);
 this.getContentPane().add(credits_l);
 this.getContentPane().add(slider_grade_l);
 this.getContentPane().add(slider_grade);
+this.getContentPane().add(slider_grade_num);
 this.getContentPane().add(box_grade_l);
 this.getContentPane().add(ap_l);
 this.getContentPane().add(box_grade);
@@ -110,6 +123,7 @@ credits_tf.setBounds(100, 75, 50, 20);
 credits_l.setBounds(25, 75, 100, 20);
 slider_grade_l.setBounds(25, 110, 50, 20);
 slider_grade.setBounds(95, 110, 110, 20);
+slider_grade_num.setBounds(225, 107, 100, 20);
 box_grade_l.setBounds(25, 145, 75, 20); 
 box_grade.setBounds(100, 145, 75, 20);
 ap_l.setBounds(25, 170, 50, 20);
