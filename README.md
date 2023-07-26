@@ -1,5 +1,5 @@
 # Courses
-Course GUI that stores in an array objects (called Course) that contain a class' grade, credits, grade year, and AP status. 
+Course GUI that stores in an array objects (called Course) that contain a class' grade, credits, grade year, course subject and AP status. 
 
 --- Course File ---
 course object with instance variables:
@@ -7,6 +7,7 @@ course object with instance variables:
 - credits
 - grade year
 - AP status
+- course subject
 
 
 --- Courses File ---
