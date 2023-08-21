@@ -1,4 +1,3 @@
-YEO WATF
 # Courses
 Course GUI that stores in an array objects (called Course) that contain a class' grade, credits, grade year, course subject and AP status. 
 
